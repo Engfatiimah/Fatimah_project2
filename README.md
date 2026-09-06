@@ -25,12 +25,16 @@ marks hearts on menu cards and fills the Favorites screen — no persistence.
 
 ## Demo
 
-🎬 **[Watch the app demo](demo/la_table_demo.mp4)** — splash animation, menu,
-dish details, and favorites in one walkthrough.
+🎬 Splash animation, menu, dish details, and favorites in one walkthrough:
+
+https://github.com/user-attachments/assets/0fe2f86c-4b4f-4eaa-87f9-f94f897aad70
+
+
+## Screens
 
 | Splash | Menu | Dish | Favorites |
 |---|---|---|---|
-| ![Splash](screenshots/splash.png) | ![Menu](screenshots/menu.png) | ![Dish](screenshots/dish.png) | ![Favorites](screenshots/favorites.png) |
+| <img width="200" alt="splash" src="https://github.com/user-attachments/assets/7db297dd-ac67-4d2a-8a85-6803ed8f3456" /> | <img width="200" alt="menu" src="https://github.com/user-attachments/assets/fcd44664-99c5-472e-b940-77360fd94b8e" /> | <img width="200" alt="dish" src="https://github.com/user-attachments/assets/b04d2140-b69a-4bb3-ad4b-0d8846bceb7d" /> | <img width="200" alt="favorites" src="https://github.com/user-attachments/assets/baa2e8ee-a5bd-4444-8b0f-0208ec53803b" /> |
 
 1. **Splash** — the chef dashes across, the logo pops, he peeks back in;
    tap anywhere to be seated. One `AnimationController`, `Interval`-based beats.
@@ -42,3 +46,33 @@ dish details, and favorites in one walkthrough.
    on the menu.
 
 ## Project Structure
+
+    lib/
+    ├── main.dart           # App entry + theme setup
+    ├── theme/              # Design tokens (AppColors, AppFonts)
+    ├── models/             # fromJson models (MealSummary, MealDetail, Ingredient)
+    ├── services/           # HTTP layer over filter.php / lookup.php
+    ├── data/               # Static favorites list
+    ├── widgets/            # Reusable UI (frame, cards, stickers, async states)
+    └── screens/            # Splash, Menu, Dish, Favorites
+
+## Extra Credit
+
+- [x] Custom 3-stage splash animation (single `AnimationController`,
+      `Interval` curves, tap-to-continue).
+- [x] A fifth screen (Favorites): a curated static list sharing one data
+      source with the menu, so its dishes and the menu's filled hearts
+      always match.
+- [x] Unified design-token system applied across every screen and state.
+- [x] Custom reusable widget library (`MenuFrame`, `PhotoSticker`,
+      `DishCard`, `LeaderRow`, `KitchenLoading`/`KitchenError`...).
+- [x] Original mascot artwork, not derived from any copyrighted character.
+- [x] Branded loading, error, and empty states.
+- [x] Discovered and documented a brief-vs-API discrepancy
+      (`French` vs `France`), verified against TheMealDB.
+
+*Bon appétit!* 🇫🇷
+
+*Inspired by the spirit of a little chef who believed anyone can cook.*
+
+Créé avec ❤️ par Fatimah Bin Mohammed 
